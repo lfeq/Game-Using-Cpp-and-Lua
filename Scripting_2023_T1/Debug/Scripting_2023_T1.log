@@ -1,5 +1,0 @@
-﻿  Scripting_2023_T1.cpp
-C:\Users\panch\OneDrive\Documents\Proyectos\SFML_Test\Scripting_2023_T1\GameObject.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\panch\OneDrive\Documents\Proyectos\SFML_Test\Scripting_2023_T1\GameObject.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\panch\OneDrive\Documents\Proyectos\SFML_Test\Scripting_2023_T1\Scripting_2023_T1.cpp(34,26): warning C4244: 'initializing': conversion from 'lua_Number' to 'int', possible loss of data
-  Scripting_2023_T1.vcxproj -> C:\Users\panch\OneDrive\Documents\Proyectos\SFML_Test\Debug\Scripting_2023_T1.exe

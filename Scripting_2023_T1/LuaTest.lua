@@ -1,0 +1,1 @@
+weapon = { Name = "Swishander", Type = "Large Sword", Damage = 74}

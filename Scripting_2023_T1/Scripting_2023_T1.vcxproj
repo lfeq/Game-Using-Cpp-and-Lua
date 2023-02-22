@@ -134,13 +134,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="ScriptingSystem.cpp" />
     <ClCompile Include="Scripting_2023_T1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="ScriptingSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Downloads\T_Player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LuaTest.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

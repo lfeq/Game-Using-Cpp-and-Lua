@@ -4,6 +4,7 @@
 #include "SFML/Window.hpp"
 #include "GameObject.h"
 #include <string>
+#include "ScriptingSystem.h"
 
 extern "C" 
 {
@@ -20,30 +21,8 @@ using namespace std;
 
 int main()
 {
-    string codeLine = "x = 4 + 2";
-
-    lua_State* L = luaL_newstate();
-
-    int resultCode = luaL_dostring(L, codeLine.c_str());
-
-    if (resultCode == LUA_OK) 
-    {
-        lua_getglobal(L, "x");
-        if (lua_isnumber(L, -1))
-        {
-            int x_in_cpp = lua_tonumber(L, -1);
-            cout << x_in_cpp << " \n";
-        }
-    }
-
-    else
-    {
-        string errorMessage = lua_tostring(L, -1);
-
-        cout << errorMessage << "\n";
-    }
-
-    lua_close(L);
+    ScriptingSystem luaModule = ScriptingSystem();
+    luaModule.GetLuaNumber();
 
     sf::RenderWindow window(sf::VideoMode(540, 540), "Scripting Game", sf::Style::Default);
     sf::Event m_event;

@@ -22,7 +22,7 @@ using namespace std;
 int main()
 {
     ScriptingSystem luaModule = ScriptingSystem();
-    luaModule.GetLuaNumber();
+    luaModule.TestTable();
 
     sf::RenderWindow window(sf::VideoMode(540, 540), "Scripting Game", sf::Style::Default);
     sf::Event m_event;

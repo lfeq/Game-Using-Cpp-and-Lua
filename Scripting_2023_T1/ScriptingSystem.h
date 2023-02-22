@@ -64,6 +64,7 @@ public:
                 lua_gettable(L, -2);
                 int damage = lua_tonumber(L, -1);
                 lua_pop(L, 1);
+                cout << damage << endl;
             }
         }
     }

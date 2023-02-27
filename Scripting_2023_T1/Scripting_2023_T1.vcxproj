@@ -134,11 +134,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScriptingSystem.cpp" />
     <ClCompile Include="Scripting_2023_T1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ScriptingSystem.h" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +149,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="LuaTest.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Scripting_2023_T1.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

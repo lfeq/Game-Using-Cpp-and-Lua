@@ -26,6 +26,49 @@ public:
         L = luaL_newstate();
 	}
 
+    void TestFunction() 
+    {
+        //Leer script 
+        if (IsValidLuaCommand(L, luaL_dofile(L, "LuaTest.lua")))
+        {
+            lua_getglobal(L, "DoStuff");
+            if (lua_isfunction(L, -1))
+            {
+                lua_pushnumber(L, 50);
+                lua_pushnumber(L, 100);
+                if (IsValidLuaCommand(L, lua_pcall(L, 2, 1, 0)))
+                {
+                    int x = lua_tonumber(L, -1);
+                    std::cout << x << std::endl;
+                }
+            }
+        }
+    }
+
+    void TestDataBase()
+    {
+        if (IsValidLuaCommand(L, luaL_dofile(L, "LuaTest.lua")))
+        {
+            lua_getglobal(L, "GetCharacter");
+            if (lua_isfunction(L, -1))
+            {
+                lua_pushnumber(L, 1);
+
+                if (IsValidLuaCommand(L, lua_pcall(L, 1, 1, 0)))
+                {
+                    if (lua_istable(L, -1))
+                    {
+                        lua_pushstring(L, "Name");
+                        lua_gettable(L, -2);
+                        std::string name = lua_tostring(L, -1);
+                        lua_pop(L, 1);
+                        cout << name << endl;
+                    }
+                }
+            }
+        }
+    }
+
     void GetLuaNumber()
     {
         string codeLine = "x = 4 + 2";

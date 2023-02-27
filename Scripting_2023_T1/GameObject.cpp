@@ -3,8 +3,9 @@
 
 GameObject::GameObject()
 {
-	texture.loadFromFile("T_player.png");
-	sprite.setTexture(texture);
+	texture = new sf::Texture();
+	texture->loadFromFile("T_player.png");
+	sprite.setTexture(*texture);
 	sprite.setPosition(transform.position);
 }
 

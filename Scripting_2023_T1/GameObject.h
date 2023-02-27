@@ -12,7 +12,7 @@ struct Transform
 class GameObject
 {
 public:
-	sf::Texture texture;
+	sf::Texture* texture;
 	Transform transform;
 	sf::Sprite sprite;
 
@@ -20,5 +20,8 @@ public:
 
 	void Update();
 	void Render();
+	virtual int Test() {
+		return 0;
+	}
 };
 

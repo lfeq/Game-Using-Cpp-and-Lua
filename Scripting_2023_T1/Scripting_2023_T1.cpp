@@ -2,7 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"
-#include "GameObject.h"
+#include "Player.h"
 #include <string>
 #include "ScriptingSystem.h"
 
@@ -26,11 +26,11 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode(540, 540), "Scripting Game", sf::Style::Default);
     sf::Event m_event;
-    GameObject gameObject;
+    Player player;
 
-    gameObject = GameObject();
-    gameObject.transform.position = sf::Vector2f(100, 100);
-    gameObject.sprite.setPosition(gameObject.transform.position);
+    player = Player();
+    player.transform.position = sf::Vector2f(100, 100);
+    player.sprite.setPosition(player.transform.position);
 
     //ciclo principal
     while (window.isOpen())
@@ -55,7 +55,7 @@ int main()
         }
 
         window.clear(sf::Color::Green);
-        window.draw(gameObject.sprite);
+        window.draw(player.sprite);
         window.display();
     }
 }

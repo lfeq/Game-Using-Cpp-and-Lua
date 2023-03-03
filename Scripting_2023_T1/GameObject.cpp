@@ -1,10 +1,21 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject()
+GameObject::GameObject(std::string path)
 {
 	texture = new sf::Texture();
-	texture->loadFromFile("T_player.png");
+
+	try
+	{
+		if (!texture->loadFromFile(path))
+			throw(1);
+	}
+	catch (int errorCode)
+	{
+		std::cout << "Error loading texture: " << errorCode << std::endl;
+		texture->loadFromFile("T_Player.png");
+	}
+
 	sprite.setTexture(*texture);
 	sprite.setPosition(transform.position);
 }

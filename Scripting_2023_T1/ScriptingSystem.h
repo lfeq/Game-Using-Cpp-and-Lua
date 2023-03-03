@@ -16,6 +16,13 @@ extern "C"
 
 using namespace std;
 
+struct PlayerData
+{
+    PlayerData() {}
+    string path_sword;
+    string path_helmet;
+};
+
 class ScriptingSystem
 {
 public:
@@ -45,8 +52,11 @@ public:
         }
     }
 
-    void TestDataBase()
+    PlayerData TestDataBase()
     {
+        PlayerData data = PlayerData();
+
+
         if (IsValidLuaCommand(L, luaL_dofile(L, "LuaTest.lua")))
         {
             lua_getglobal(L, "GetCharacter");
@@ -58,15 +68,24 @@ public:
                 {
                     if (lua_istable(L, -1))
                     {
-                        lua_pushstring(L, "Name");
+                        lua_pushstring(L, "Sword");
                         lua_gettable(L, -2);
-                        std::string name = lua_tostring(L, -1);
+                        data.path_sword = lua_tostring(L, -1);
                         lua_pop(L, 1);
-                        cout << name << endl;
+                    }
+
+                    if (lua_istable(L, -1))
+                    {
+                        lua_pushstring(L, "Helmet");
+                        lua_gettable(L, -2);
+                        data.path_helmet = lua_tostring(L, -1);
+                        lua_pop(L, 1);
                     }
                 }
             }
         }
+
+        return data;
     }
 
     void GetLuaNumber()

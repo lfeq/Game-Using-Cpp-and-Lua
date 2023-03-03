@@ -1,6 +1,6 @@
 character = {}
-character[0] = { Name = "John", ID = 14}
-character[1] = { Name = "Guilty Spark", ID = 15 }
+character[0] = { Sword = "John", Helmet = "Viking"}
+character[1] = { Sword = "Guilty Spark", Helmet = "Spartan" }
 
 function GetCharacter(i)
 	return character[i]

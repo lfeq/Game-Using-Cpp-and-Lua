@@ -5,32 +5,26 @@
 #include "Player.h"
 #include <string>
 #include "ScriptingSystem.h"
-
-extern "C" 
-{
-#include "Lua542/include/lua.h"
-#include "Lua542/include/lauxlib.h"
-#include "Lua542/include/lualib.h"
-}
-
-#ifdef _WIN32
-#pragma comment(lib, "lua542/liblua54.a")
-#endif // _WIN32
-
-using namespace std;
+#include <list>
 
 int main()
 {
+    std::list<GameObject> gameObjectList;
+    gameObjectList = std::list<GameObject>();
+
     ScriptingSystem luaModule = ScriptingSystem();
-    luaModule.TestDataBase();
+    PlayerData data = luaModule.TestDataBase();
+
+    Player player = Player("T_Player.png");
+
+    gameObjectList.push_back(player);
+
+    player.sword = Sword(data.path_sword);
+
+    gameObjectList.push_back(player.sword);
 
     sf::RenderWindow window(sf::VideoMode(540, 540), "Scripting Game", sf::Style::Default);
     sf::Event m_event;
-    Player player;
-
-    player = Player();
-    player.transform.position = sf::Vector2f(100, 100);
-    player.sprite.setPosition(player.transform.position);
 
     //ciclo principal
     while (window.isOpen())
@@ -55,7 +49,12 @@ int main()
         }
 
         window.clear(sf::Color::Green);
-        window.draw(player.sprite);
+
+        std::list<GameObject>::iterator it;
+
+        for (it = gameObjectList.begin(); it != gameObjectList.end(); it++)
+            window.draw(it->sprite);
+
         window.display();
     }
 }

@@ -137,12 +137,14 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScriptingSystem.cpp" />
     <ClCompile Include="Scripting_2023_T1.cpp" />
+    <ClCompile Include="Sword.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ScriptingSystem.h" />
+    <ClInclude Include="Sword.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Downloads\T_Player.png" />

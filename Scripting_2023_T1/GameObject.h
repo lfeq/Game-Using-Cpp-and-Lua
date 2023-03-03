@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML/System.hpp";
 #include "SFML/Graphics.hpp";
+#include <iostream>;
 
 struct Transform
 {
@@ -16,11 +17,13 @@ public:
 	Transform transform;
 	sf::Sprite sprite;
 
-	GameObject();
+	GameObject() {}
+	GameObject(std::string path);
 
 	void Update();
 	void Render();
-	virtual int Test() {
+	int Test() 
+	{
 		return 0;
 	}
 };

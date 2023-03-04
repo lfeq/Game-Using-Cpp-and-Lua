@@ -21,6 +21,8 @@ struct PlayerData
     PlayerData() {}
     string path_sword;
     string path_helmet;
+    string path_armor;
+    string path_shield;
 };
 
 class ScriptingSystem
@@ -52,17 +54,17 @@ public:
         }
     }
 
-    PlayerData TestDataBase()
+    PlayerData TestDataBase(string fileName, int index)
     {
         PlayerData data = PlayerData();
 
 
-        if (IsValidLuaCommand(L, luaL_dofile(L, "LuaTest.lua")))
+        if (IsValidLuaCommand(L, luaL_dofile(L, fileName.c_str())))
         {
             lua_getglobal(L, "GetCharacter");
             if (lua_isfunction(L, -1))
             {
-                lua_pushnumber(L, 1);
+                lua_pushnumber(L, index);
 
                 if (IsValidLuaCommand(L, lua_pcall(L, 1, 1, 0)))
                 {
@@ -79,6 +81,22 @@ public:
                         lua_pushstring(L, "Helmet");
                         lua_gettable(L, -2);
                         data.path_helmet = lua_tostring(L, -1);
+                        lua_pop(L, 1);
+                    }
+
+                    if (lua_istable(L, -1))
+                    {
+                        lua_pushstring(L, "Armor");
+                        lua_gettable(L, -2);
+                        data.path_armor = lua_tostring(L, -1);
+                        lua_pop(L, 1);
+                    }
+
+                    if (lua_istable(L, -1))
+                    {
+                        lua_pushstring(L, "Shield");
+                        lua_gettable(L, -2);
+                        data.path_shield = lua_tostring(L, -1);
                         lua_pop(L, 1);
                     }
                 }

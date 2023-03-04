@@ -133,17 +133,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Armor.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Helmet.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScriptingSystem.cpp" />
     <ClCompile Include="Scripting_2023_T1.cpp" />
+    <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Sword.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Armor.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Helmet.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ScriptingSystem.h" />
+    <ClInclude Include="Shield.h" />
     <ClInclude Include="Sword.h" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="LuaTest.lua" />
+    <None Include="Player.lua" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Scripting_2023_T1.rc" />

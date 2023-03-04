@@ -30,6 +30,15 @@
     <ClCompile Include="Sword.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Helmet.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
@@ -47,6 +56,15 @@
     <ClInclude Include="Sword.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Helmet.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Downloads\T_Player.png">
@@ -55,6 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="LuaTest.lua">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="Player.lua">
       <Filter>Archivos de recursos</Filter>
     </None>
   </ItemGroup>
